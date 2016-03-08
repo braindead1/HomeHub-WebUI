@@ -1,0 +1,5 @@
+# ignore custom components
+/Abfalltonnen.php
+/Licht.php
+/Sonnenstand.php
+/Tankstelle.php

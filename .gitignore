@@ -1,0 +1,2 @@
+# ignore composer.lock file
+/composer.lock

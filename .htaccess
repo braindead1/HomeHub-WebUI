@@ -1,0 +1,4 @@
+#RewriteEngine On
+
+#RewriteRule    ^$        public/ [NC,QSA,L]
+#RewriteRule    ^(.*)$    public/$1 [NC,QSA,L]

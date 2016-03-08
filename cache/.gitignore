@@ -1,0 +1,3 @@
+# ignore all cached files, but create empty cache folder
+*
+!.gitignore
