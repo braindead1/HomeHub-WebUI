@@ -10,7 +10,6 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../assets/css/offcanvas.css" rel="stylesheet">
         <link href="../assets/css/style.css" rel="stylesheet">
 
         <?php
@@ -29,19 +28,18 @@
     </head>
     <body>
         <header>HomeHub WebUI</header>
-        <div  class="container" id="wrapper">
-            <nav>
+        <div class="container" id="wrapper">
+            <nav id="sidebar" class="offcanvas">
                 <?php
                     foreach($menu as $entry) {
-                        if($entry['name'] != '') {
-                            $selected = '';
+                        $selected = '';
+                        if($entry['name'] == $selectedCat) {
+                            $selected = 'selected';
+                        }
 
-                            if($entry['name'] == $selectedCat) {
-                                $selected = 'selected';
-                            }
-
-                            echo '<a class="'.$selected.'" href="'.$entry['name'].'"><img src="../assets/icons/'.$entry['icon'].'" class="icon">'.$entry['name'].'</a>';
-                        } else {
+                        echo '<a class="'.$selected.'" href="'.$entry['name'].'"><img src="../assets/icons/'.$entry['icon'].'" class="icon">'.$entry['name'].'</a>';
+                                                
+                        if(isset($entry['append_divider']) && $entry['append_divider'] == "true") {
                             echo '<div class="divider"></div>';
                         }
                     }
@@ -67,10 +65,8 @@
             //]]>
         </script>
 
-        <script src="../assets/js/jquery-2.1.4.min.js"></script>
+        <script src="../assets/js/jquery-2.2.1.min.js"></script>
         <script src="../assets/js/bootstrap.min.js"></script>
-        <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
-        <script src="../assets/js/offcanvas.js"></script>
         <script src='../assets/js/script.js'></script>
         
         <?php
