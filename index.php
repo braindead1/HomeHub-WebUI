@@ -264,99 +264,101 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
     
     // Komponenten einlesen
     $components = array();
-    foreach($categories as $category) {
-        // Custom?
-        if(isset($custom[$category])) {
-            foreach($custom[$category] as $customEntry) {
-                // Custom Komponente?
-                if(isset($customEntry['component'])) {
-                    $components[$category][] = $customEntry;
-                }
-                
-                // Channel?
-                $key = array_search($customEntry['name'], array_column($export['channels'], 'name'));
-                if(is_int($key)) {
-                    if($export['channels'][$key]['visible'] == true && isset($export['channels'][$key]['datapoints'])) {
-                        $channel = $export['channels'][$key];                        
-                        foreach($channel['datapoints'] as $datapoint) {
-                            $channel[$datapoint['type']] = $datapoint['ise_id'];
-                        }
-                        unset($channel['datapoints']);
-                        
-                        if(isset($customEntry['display_name'])) {
-                            $channel['name'] = $customEntry['display_name'];
-                        }
-                        $components[$category][] = array_merge($customEntry, $channel);
+    if(count($export) > 0) {
+        foreach($categories as $category) {
+            // Custom?
+            if(isset($custom[$category])) {
+                foreach($custom[$category] as $customEntry) {
+                    // Custom Komponente?
+                    if(isset($customEntry['component'])) {
+                        $components[$category][] = $customEntry;
                     }
-                }
-                
-                // SysVar?
-                $key = array_search($customEntry['name'], array_column($export['systemvariables'], 'name'));
-                if(is_int($key)) {
-                    if($export['systemvariables'][$key]['visible'] == true) {
-                        $components[$category][] = array_merge($customEntry, $export['systemvariables'][$key]);
+
+                    // Channel?
+                    $key = array_search($customEntry['name'], array_column($export['channels'], 'name'));
+                    if(is_int($key)) {
+                        if($export['channels'][$key]['visible'] == true && isset($export['channels'][$key]['datapoints'])) {
+                            $channel = $export['channels'][$key];                        
+                            foreach($channel['datapoints'] as $datapoint) {
+                                $channel[$datapoint['type']] = $datapoint['ise_id'];
+                            }
+                            unset($channel['datapoints']);
+
+                            if(isset($customEntry['display_name'])) {
+                                $channel['name'] = $customEntry['display_name'];
+                            }
+                            $components[$category][] = array_merge($customEntry, $channel);
+                        }
                     }
-                }
-                
-                // Program?
-                $key = array_search($customEntry['name'], array_column($export['programs'], 'name'));
-                if(is_int($key)) {
-                    if($export['programs'][$key]['visible'] == true) {
-                        $components[$category][] = array_merge($customEntry, $export['programs'][$key]);
+
+                    // SysVar?
+                    $key = array_search($customEntry['name'], array_column($export['systemvariables'], 'name'));
+                    if(is_int($key)) {
+                        if($export['systemvariables'][$key]['visible'] == true) {
+                            $components[$category][] = array_merge($customEntry, $export['systemvariables'][$key]);
+                        }
+                    }
+
+                    // Program?
+                    $key = array_search($customEntry['name'], array_column($export['programs'], 'name'));
+                    if(is_int($key)) {
+                        if($export['programs'][$key]['visible'] == true) {
+                            $components[$category][] = array_merge($customEntry, $export['programs'][$key]);
+                        }
                     }
                 }
             }
-        }
-        
-        // Mapping?
-        if(isset($mapping[$category])) {
-            $components[$category] = array();
-            
-            foreach($mapping[$category] as $mappingEntry) {
-                $mappingChannels = array_filter($export['channels'], function($channel) use ($mappingEntry) {
-                    if($channel['component'] == $mappingEntry['name']) {
-                        if(isset($channel['visible']) && $channel['visible'] === 'true') {
-                            if(isset($channel['datapoints'])) {
+
+            // Mapping?
+            if(isset($mapping[$category])) {
+                $components[$category] = array();
+
+                foreach($mapping[$category] as $mappingEntry) {
+                    $mappingChannels = array_filter($export['channels'], function($channel) use ($mappingEntry) {
+                        if($channel['component'] == $mappingEntry['name']) {
+                            if(isset($channel['visible']) && $channel['visible'] === 'true') {
+                                if(isset($channel['datapoints'])) {
+                                    return true;
+                                }
+                            }
+                        }
+                    });
+                    foreach($mappingChannels as $mappingChannel) {
+                        foreach($mappingChannel['datapoints'] as $datapoint) {
+                            $mappingChannel[$datapoint['type']] = $datapoint['ise_id'];
+                        }
+                        unset($mappingChannel['datapoints']);
+                        $components[$category][] = array_merge($mappingEntry, $mappingChannel);
+                    }
+
+                    $mappingSysVars = array_filter($export['systemvariables'], function($systemvariable) use ($mappingEntry) {
+                        if($systemvariable['component'] == $mappingEntry['name']) {
+                            if(isset($systemvariable['visible']) && $systemvariable['visible'] === 'true') {
                                 return true;
                             }
                         }
+                    });
+                    foreach($mappingSysVars as $mappingSysVar) {
+                        $components[$category][] = array_merge($mappingEntry, $mappingSysVar);
                     }
-                });
-                foreach($mappingChannels as $mappingChannel) {
-                    foreach($mappingChannel['datapoints'] as $datapoint) {
-                        $mappingChannel[$datapoint['type']] = $datapoint['ise_id'];
-                    }
-                    unset($mappingChannel['datapoints']);
-                    $components[$category][] = array_merge($mappingEntry, $mappingChannel);
-                }
-                
-                $mappingSysVars = array_filter($export['systemvariables'], function($systemvariable) use ($mappingEntry) {
-                    if($systemvariable['component'] == $mappingEntry['name']) {
-                        if(isset($systemvariable['visible']) && $systemvariable['visible'] === 'true') {
-                            return true;
+
+                    $mappingPrograms = array_filter($export['programs'], function($program) use ($mappingEntry) {
+                        if($program['component'] == $mappingEntry['name']) {
+                            if(isset($program['visible']) && $program['visible'] === 'true') {
+                                return true;
+                            }
                         }
+                    });
+                    foreach($mappingPrograms as $mappingProgram) {
+                        $components[$category][] = array_merge($mappingEntry, $mappingProgram);
                     }
-                });
-                foreach($mappingSysVars as $mappingSysVar) {
-                    $components[$category][] = array_merge($mappingEntry, $mappingSysVar);
                 }
-                
-                $mappingPrograms = array_filter($export['programs'], function($program) use ($mappingEntry) {
-                    if($program['component'] == $mappingEntry['name']) {
-                        if(isset($program['visible']) && $program['visible'] === 'true') {
-                            return true;
-                        }
-                    }
+
+                // Alphabetisch sortieren
+                usort($components[$category], function($a, $b) {
+                    return strcmp($a['name'], $b['name']);
                 });
-                foreach($mappingPrograms as $mappingProgram) {
-                    $components[$category][] = array_merge($mappingEntry, $mappingProgram);
-                }
             }
-            
-            // Alphabetisch sortieren
-            usort($components[$category], function($a, $b) {
-                return strcmp($a['name'], $b['name']);
-            });
         }
     }
     
