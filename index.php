@@ -284,7 +284,7 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
                             }
                             unset($channel['datapoints']);
 
-                            if(isset($customEntry['display_name'])) {
+                            if(isset($customEntry['display_name']) && $customEntry['display_name'] <> '') {
                                 $channel['name'] = $customEntry['display_name'];
                             }
                             $components[$category][] = array_merge($customEntry, $channel);
@@ -295,7 +295,12 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
                     $key = array_search($customEntry['name'], array_column($export['systemvariables'], 'name'));
                     if(is_int($key)) {
                         if($export['systemvariables'][$key]['visible'] == true) {
-                            $components[$category][] = array_merge($customEntry, $export['systemvariables'][$key]);
+                            $sysVar = $export['systemvariables'][$key];
+                            
+                            if(isset($customEntry['display_name']) && $customEntry['display_name'] <> '') {
+                                $sysVar['name'] = $customEntry['display_name'];
+                            }
+                            $components[$category][] = array_merge($customEntry, $sysVar);
                         }
                     }
 
@@ -303,7 +308,12 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
                     $key = array_search($customEntry['name'], array_column($export['programs'], 'name'));
                     if(is_int($key)) {
                         if($export['programs'][$key]['visible'] == true) {
-                            $components[$category][] = array_merge($customEntry, $export['programs'][$key]);
+                            $program = $export['programs'][$key];
+                            
+                            if(isset($customEntry['display_name']) && $customEntry['display_name'] <> '') {
+                                $program['name'] = $customEntry['display_name'];
+                            }                            
+                            $components[$category][] = array_merge($customEntry, $program);
                         }
                     }
                 }
