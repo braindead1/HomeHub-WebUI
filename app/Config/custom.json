@@ -31,8 +31,10 @@
         "append_divider": "true"
       },
       {
-        "component": "Tankstelle",
-        "name": "Tankstelle",
+        "component": "Tankerkoenig",
+        "name": "Total Tankstelle",
+        "api_key": "00000000-0000-0000-0000-000000000000",
+        "station_id": "00000000-0000-0000-0000-000000000000",
         "icon": "homehub_tanken.png"
       },
       {

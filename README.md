@@ -122,10 +122,11 @@ HomeHub benötigt eine installierte CML-API auf der CCU.
 * CUX9002
 
 ## Unterstützte Custom Komponenten
-* Tagesschau in 100 Sekunden
-* Webcam (INSTAR IN5905HD)
 * Audio (Radio Erft) NEU
 * iFrame (HomeMatic-Forum) NEU
+* Tagesschau in 100 Sekunden
+* Tankerkönig NEU
+* Webcam (INSTAR IN5905HD)
 
 ## Konfigurationsmöglichkeiten in HomeHub
 * In der Datei app/Config/categories.json kann das Menü auf der linken Seite konfiguriert werden.
