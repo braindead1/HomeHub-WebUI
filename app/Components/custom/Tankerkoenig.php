@@ -10,29 +10,32 @@ function Tankerkoenig($component) {
     $json = file_get_contents('https://creativecommons.tankerkoenig.de/json/detail.php?id=' . $component['station_id'] . '&apikey=' . $component['api_key']);
     $data = json_decode($json, true);
     
+    $retVal = '';
+    
     if(isset($data['status']) && $data['status'] == 'ok') {
         if($data['station']['isOpen'] == '1') {
-            return '<div class="hh">'
-                . '<div class="pull-left"><img src="../assets/icons/' . $component["icon"] . '" class="icon">' . $component["name"] . '</div>'
-                . '<div class="pull-right">'
-                    . '<span class="info">E5: ' . $data['station']['e5'] . ' Euro</span>'
+            if(isset($component['fuel_types'])) {
+                foreach($component['fuel_types'] as $fuel_type) {
+                    if(isset($data['station'][$fuel_type])) {
+                        $retVal .= '<span class="info">' . ucfirst($fuel_type) . ': ' . $data['station'][$fuel_type] . ' Euro</span>';
+                    }
+                }
+            } else {
+                // Alle ausgeben
+                $retVal = '<span class="info">E5: ' . $data['station']['e5'] . ' Euro</span>'
                     . '<span class="info">E10: ' . $data['station']['e10'] . ' Euro</span>'
-                    . '<span class="info">Diesel: ' . $data['station']['diesel'] . ' Euro</span>'
-                . '</div>'
-                . '<div class="clearfix"></div>'
-            . '</div>';
+                    . '<span class="info">Diesel: ' . $data['station']['diesel'] . ' Euro</span>';
+            }
         } else {
-            return '<div class="hh">'
-                . '<div class="pull-left"><img src="../assets/icons/' . $component["icon"] . '" class="icon">' . $component["name"] . '</div>'
-                . '<div class="pull-right">geschlossen</div>'
-                . '<div class="clearfix"></div>'
-            . '</div>';
+            $retVal = 'geschlossen';
         }
     } else {
-        return '<div class="hh">'
-                . '<div class="pull-left"><img src="../assets/icons/' . $component["icon"] . '" class="icon">' . $component["name"] . '</div>'
-                . '<div class="pull-right">FEHLER</div>'
-                . '<div class="clearfix"></div>'
-            . '</div>';
+        $retVal = 'FEHLER';
     }
+    
+    return '<div class="hh">'
+        . '<div class="pull-left"><img src="../assets/icons/' . $component["icon"] . '" class="icon">' . $component["name"] . '</div>'
+        . '<div class="pull-right">' . $retVal . '</div>'
+        . '<div class="clearfix"></div>'
+    . '</div>';
 }

@@ -32,10 +32,11 @@
       },
       {
         "component": "Tankerkoenig",
-        "name": "Total Tankstelle",
-        "api_key": "00000000-0000-0000-0000-000000000000",
-        "station_id": "00000000-0000-0000-0000-000000000000",
-        "icon": "homehub_tanken.png"
+        "name": "Benzinpreise",
+        "icon": "homehub_tanken.png",
+        "api_key": "00000000-0000-0000-0000-000000000002",
+        "station_id": "92f703e8-0b3c-46da-9948-25cb1a6a1514",
+        "fuel_types": ["e5", "e10", "diesel"]
       },
       {
         "name": "Wasserfilter Status",
