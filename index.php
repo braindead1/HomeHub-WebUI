@@ -192,7 +192,7 @@ $app->get('/Import', function () use ($app) {
         $export['programs'][] = $dummy;
     }
     
-    file_put_contents($exportFile, json_encode($export));
+    file_put_contents($exportFile, json_encode($export, JSON_UNESCAPED_UNICODE));
     
     $app->flashNow('info', 'Import done');
     $app->flashKeep();
