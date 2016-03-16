@@ -37,7 +37,7 @@
                             $selected = 'selected';
                         }
 
-                        echo '<a class="'.$selected.'" href="'.$entry['name'].'"><img src="../assets/icons/'.$entry['icon'].'" class="icon">'.$entry['name'].'</a>';
+                        echo '<a class="'.$selected.'" href="'.urlencode($entry['name']).'"><img src="../assets/icons/'.$entry['icon'].'" class="icon">'.$entry['name'].'</a>';
                                                 
                         if(isset($entry['append_divider']) && $entry['append_divider'] == "true") {
                             echo '<div class="divider"></div>';
