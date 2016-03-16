@@ -2,6 +2,10 @@
   "mapping": {
     "Aktoren": [
       {
+        "name": "HM-ES-PMSw1-DR",
+        "icon": "message_socket_on_off.png"
+      },
+      {
         "name": "HM-ES-PMSw1-Pl",
         "icon": "message_socket_on_off.png"
       },
