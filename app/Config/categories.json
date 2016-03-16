@@ -9,7 +9,15 @@
     {
       "name": "Erdgeschoss",
       "icon": "control_building_modern_s_okg_eg.png",
-      "subcategories": ["Badezimmer", "Esszimmer", "Küche", "Wohnzimmer"]
+      "subcategories": [
+        "Badezimmer",
+        "Esszimmer", 
+        {
+          "name": "Küche",
+          "display_name": "Küche EG"
+        },
+        "Wohnzimmer"
+      ]
     },
     {
       "name": "Obergeschoss",

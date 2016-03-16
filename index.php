@@ -229,10 +229,33 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
         
         $menu = $json['categories'];
         
-        $categories[] = $selectedCat;
+        $categories[] = array(
+            'name' => $selectedCat,
+            'display_name' => $selectedCat
+        );
         $key = array_search($selectedCat, array_column($json['categories'], 'name'));
         if(is_int($key) && isset($json['categories'][$key]['subcategories'])) {
-            $categories = array_merge($categories, $json['categories'][$key]['subcategories']);
+            foreach($json['categories'][$key]['subcategories'] as $subCategory) {
+                // Display Name?
+                if(!is_array($subCategory)) {
+                    $categories[] = array(
+                        'name' => $subCategory,
+                        'display_name' => $subCategory
+                    );
+                } else {
+                    if(!isset($subCategory['display_name'])) {
+                        $categories[] = array(
+                            'name' => $subCategory['name'],
+                            'display_name' => $subCategory['name']
+                        );
+                    } else {
+                        $categories[] = array(
+                            'name' => $subCategory['name'],
+                            'display_name' => $subCategory['display_name']
+                        );
+                    }
+                }
+            }
         }
     }
     
@@ -267,11 +290,11 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
     if(count($export) > 0) {
         foreach($categories as $category) {
             // Custom?
-            if(isset($custom[$category])) {
-                foreach($custom[$category] as $customEntry) {
+            if(isset($custom[$category['name']])) {
+                foreach($custom[$category['name']] as $customEntry) {
                     // Custom Komponente?
                     if(isset($customEntry['component'])) {
-                        $components[$category][] = $customEntry;
+                        $components[$category['display_name']][] = $customEntry;
                     }
 
                     // Channel?
@@ -287,7 +310,7 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
                             if(isset($customEntry['display_name']) && $customEntry['display_name'] <> '') {
                                 $channel['name'] = $customEntry['display_name'];
                             }
-                            $components[$category][] = array_merge($customEntry, $channel);
+                            $components[$category['display_name']][] = array_merge($customEntry, $channel);
                         }
                     }
 
@@ -300,7 +323,7 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
                             if(isset($customEntry['display_name']) && $customEntry['display_name'] <> '') {
                                 $sysVar['name'] = $customEntry['display_name'];
                             }
-                            $components[$category][] = array_merge($customEntry, $sysVar);
+                            $components[$category['display_name']][] = array_merge($customEntry, $sysVar);
                         }
                     }
 
@@ -313,17 +336,15 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
                             if(isset($customEntry['display_name']) && $customEntry['display_name'] <> '') {
                                 $program['name'] = $customEntry['display_name'];
                             }                            
-                            $components[$category][] = array_merge($customEntry, $program);
+                            $components[$category['display_name']][] = array_merge($customEntry, $program);
                         }
                     }
                 }
             }
 
             // Mapping?
-            if(isset($mapping[$category])) {
-                $components[$category] = array();
-
-                foreach($mapping[$category] as $mappingEntry) {
+            if(isset($mapping[$category['name']])) {
+                foreach($mapping[$category['name']] as $mappingEntry) {
                     $mappingChannels = array_filter($export['channels'], function($channel) use ($mappingEntry) {
                         if($channel['component'] == $mappingEntry['name']) {
                             if(isset($channel['visible']) && $channel['visible'] === 'true') {
@@ -338,7 +359,7 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
                             $mappingChannel[$datapoint['type']] = $datapoint['ise_id'];
                         }
                         unset($mappingChannel['datapoints']);
-                        $components[$category][] = array_merge($mappingEntry, $mappingChannel);
+                        $components[$category['display_name']][] = array_merge($mappingEntry, $mappingChannel);
                     }
 
                     $mappingSysVars = array_filter($export['systemvariables'], function($systemvariable) use ($mappingEntry) {
@@ -349,7 +370,7 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
                         }
                     });
                     foreach($mappingSysVars as $mappingSysVar) {
-                        $components[$category][] = array_merge($mappingEntry, $mappingSysVar);
+                        $components[$category['display_name']][] = array_merge($mappingEntry, $mappingSysVar);
                     }
 
                     $mappingPrograms = array_filter($export['programs'], function($program) use ($mappingEntry) {
@@ -360,12 +381,12 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
                         }
                     });
                     foreach($mappingPrograms as $mappingProgram) {
-                        $components[$category][] = array_merge($mappingEntry, $mappingProgram);
+                        $components[$category['display_name']][] = array_merge($mappingEntry, $mappingProgram);
                     }
                 }
 
                 // Alphabetisch sortieren
-                usort($components[$category], function($a, $b) {
+                usort($components[$category['display_name']], function($a, $b) {
                     return strcmp($a['name'], $b['name']);
                 });
             }
