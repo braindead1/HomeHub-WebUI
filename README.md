@@ -23,6 +23,7 @@ HomeHub benötigt eine installierte CML-API auf der CCU.
 * HM-CC-VD
 * HM-Dis-TD-T (validieren)
 * HM-Dis-WM55
+* HM-ES-PMSw1-DR (validieren) NEU
 * HM-ES-PMSw1-Pl
 * HM-ES-TX-WM
 * HM-LC-Bl1-FM

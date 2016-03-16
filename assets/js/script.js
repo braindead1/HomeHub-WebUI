@@ -331,6 +331,45 @@ var updateDatapoints = function () {
                     case 'HM-Dis-WM55':
                         $('#' + ise_id).html(value);
                         break;
+                    case 'HM-ES-PMSw1-DR':
+                        switch (datapoint) {
+                            case 'CONTROL_MODE':
+                                if (value === 'true') {
+                                    $('#' + ise_id).html('Ein');
+                                    $('#' + ise_id).addClass('btn-true');
+                                    $('#' + ise_id).removeClass('btn-false');
+                                    $('#' + ise_id).attr('data-set-id', ise_id);
+                                    $('#' + ise_id).attr('data-set-value', '0');
+                                } else {
+                                    $('#' + ise_id).html('Aus');
+                                    $('#' + ise_id).addClass('btn-false');
+                                    $('#' + ise_id).removeClass('btn-true');
+                                    $('#' + ise_id).attr('data-set-id', ise_id);
+                                    $('#' + ise_id).attr('data-set-value', '1');
+                                }
+                                break;
+                            case 'CURRENT':
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'mA');
+                                break;
+                            case 'ENERGY_COUNTER':
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'Wh');
+                                break;
+                            case 'FREQUENCY':
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'Hz');
+                                break;
+                            case 'STATE':
+                                $('#' + ise_id).html(value);
+                                break;
+                            case 'POWER':
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'W');
+                                break;
+                            case 'VOLTAGE':
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'V');
+                                break;
+                            default:
+                                $('#' + ise_id).html(value);
+                        }
+                        break;
                     case 'HM-ES-PMSw1-Pl':
                         switch (datapoint) {
                             case 'CONTROL_MODE':
