@@ -5,6 +5,8 @@
 // HM-LC-Dim1PWM-CV|HM-LC-Dim1PWM-CV:2||VISIBLE=true|OPERATE=true|LEVEL=2737|OLD_LEVEL=2739|LEVEL_REAL=2738|RAMP_TIME=2742|RAMP_STOP=2741|ERROR_REDUCED=2731|ERROR_OVERHEAT=2727|
 // HM-LC-Dim1PWM-CV|HM-LC-Dim1PWM-CV:3||VISIBLE=true|OPERATE=true|LEVEL=2756|OLD_LEVEL=2758|LEVEL_REAL=2757|RAMP_TIME=2761|RAMP_STOP=2760|ERROR_REDUCED=2750|ERROR_OVERHEAT=2746|
 
+// Validated by Manu
+
 function HM_LC_Dim1PWM_CV($component) {
     if ($component['parent_device_interface'] == 'BidCos-RF' && $component['visible'] == 'true' && isset($component['LEVEL'])) {
         $modalId = uniqid();

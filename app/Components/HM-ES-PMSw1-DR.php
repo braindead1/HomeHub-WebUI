@@ -8,6 +8,8 @@
 // HM-ES-PMSw1-DR|HM-ES-PMSw1-DR:5||VISIBLE=true|OPERATE=true|DECISION_VALUE=3519|
 // HM-ES-PMSw1-DR|HM-ES-PMSw1-DR:6||VISIBLE=true|OPERATE=true|DECISION_VALUE=3521|
 
+// Validated by Manu
+
 function HM_ES_PMSw1_DR($component) {
     if ($component['parent_device_interface'] == 'BidCos-RF' && $component['visible'] == 'true' && isset($component['STATE'])) {
         return '<div class="hh">'

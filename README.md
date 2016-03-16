@@ -23,13 +23,13 @@ HomeHub benötigt eine installierte CML-API auf der CCU.
 * HM-CC-VD
 * HM-Dis-TD-T (validieren)
 * HM-Dis-WM55
-* HM-ES-PMSw1-DR (validieren) NEU
+* HM-ES-PMSw1-DR NEU
 * HM-ES-PMSw1-Pl
 * HM-ES-TX-WM
 * HM-LC-Bl1-FM
 * HM-LC-Bl1-SM (validieren)
 * HM-LC-Bl1PBU-FM
-* HM-LC-Dim1PWM-CV (validieren)
+* HM-LC-Dim1PWM-CV
 * HM-LC-Dim1T-CV (validieren)
 * HM-LC-Dim1T-FM
 * HM-LC-Dim1T-Pl
@@ -58,15 +58,15 @@ HomeHub benötigt eine installierte CML-API auf der CCU.
 * HM-PB-2-FM (validieren)
 * HM-PB-2-WM
 * HM-PB-2-WM55-2
-* HM-PB-2-WM55 (validieren)
+* HM-PB-2-WM55
 * HM-PB-4-WM (validieren)
 * HM-PB-4Dis-WM
-* HM-PB-6-WM55 (validieren)
+* HM-PB-6-WM55
 * HM-PBI-4-FM
 * HM-RC-19-B
 * HM-RC-19-SW
 * HM-RC-19
-* HM-RC-4-2 (validieren)
+* HM-RC-4-2
 * HM-RC-4-B
 * HM-RC-4
 * HM-RC-Dis-H-x-EU
@@ -77,7 +77,7 @@ HomeHub benötigt eine installierte CML-API auf der CCU.
 * HM-SCI-3-FM
 * HM-Sec-Key-S
 * HM-Sec-Key
-* HM-Sec-MDIR-2 (validieren)
+* HM-Sec-MDIR-2
 * HM-Sec-MDIR
 * HM-Sec-RHS
 * HM-Sec-SC-2
@@ -94,18 +94,18 @@ HomeHub benötigt eine installierte CML-API auf der CCU.
 * HM-Sen-MDIR-O-2 (validieren)
 * HM-Sen-MDIR-O (validieren)
 * HM-Sen-MDIR-SM (validieren)
-* HM-Sen-MDIR-WM55 (validieren)
+* HM-Sen-MDIR-WM55
 * HM-Sen-RD-O
 * HM-Sen-Wa-Od
-* HM-SwI-3-FM (validieren)
-* HM-TC-IT-WM-W-EU (validieren)
+* HM-SwI-3-FM
+* HM-TC-IT-WM-W-EU
 * HM-WDC7000
 * HM-WDS10-TH-O
-* HM-WDS100-C6-O (validieren)
-* HM-WDS30-OT2-SM (validieren)
+* HM-WDS100-C6-O
+* HM-WDS30-OT2-SM
 * HM-WDS30-T-O (validieren)
 * HM-WDS40-TH-I-2
-* HM-WDS40-TH-I (validieren)
+* HM-WDS40-TH-I
 * HMW-IO-12-FM (validieren)
 * HMW-IO-12-Sw14-DR
 * HMW-IO-12-Sw7-DR

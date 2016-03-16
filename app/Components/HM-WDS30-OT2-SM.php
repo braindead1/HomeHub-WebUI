@@ -7,6 +7,8 @@
 // HM-WDS30-OT2-SM|SonneHinten4||VISIBLE=true|OPERATE=true|TEMPERATURE=22762|LOWBAT=22761|
 // HM-WDS30-OT2-SM|SonneHinten5||VISIBLE=true|OPERATE=true|TEMPERATURE=22765|LOWBAT=22764|
 
+// Validated by Manu
+
 function HM_WDS30_OT2_SM($component) {
     if ($component['parent_device_interface'] == 'BidCos-RF' && $component['visible'] == 'true' && isset($component['TEMPERATURE'])) {
         return '<div class="hh">'

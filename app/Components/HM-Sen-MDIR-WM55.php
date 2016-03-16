@@ -7,6 +7,8 @@
 
 // Lowbat wid nicht angezeigt
 
+// Validated by Manu
+
 function HM_Sen_MDIR_WM55($component) {
     if ($component['parent_device_interface'] == 'BidCos-RF' && $component['visible'] == 'true' && isset($component['PRESS_SHORT'])) {
         return '<div class="hh">'

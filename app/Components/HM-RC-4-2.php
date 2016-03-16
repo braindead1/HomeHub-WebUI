@@ -8,6 +8,8 @@
 
 // LOWBAT wird nicht angezeigt
 
+// Validated by Manu
+
 function HM_RC_4_2($component) {
     if ($component['parent_device_interface'] == 'BidCos-RF' && $component['visible'] == 'true' && isset($component['PRESS_SHORT'])) {
         return '<div class="hh">'

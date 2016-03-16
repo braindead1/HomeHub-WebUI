@@ -3,6 +3,8 @@
 // HM-WDS40-TH-I|Garten Wetter:0||VISIBLE=|OPERATE=|UNREACH=7210|STICKY_UNREACH=7206|CONFIG_PENDING=7196|LOWBAT=7200|RSSI_DEVICE=7204|RSSI_PEER=7205|
 // HM-WDS40-TH-I|Garten Wetter:1||VISIBLE=true|OPERATE=true|TEMPERATURE=7216|HUMIDITY=7215|
 
+// Validated by Manu
+
 function HM_WDS40_TH_I($component) {
     if ($component['parent_device_interface'] == 'BidCos-RF' && $component['visible'] == 'true' && isset($component['TEMPERATURE'])) {
         return '<div class="hh">'
