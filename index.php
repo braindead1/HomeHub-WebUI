@@ -386,9 +386,11 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
                 }
 
                 // Alphabetisch sortieren
-                usort($components[$category['display_name']], function($a, $b) {
-                    return strcmp($a['name'], $b['name']);
-                });
+                if(isset($components[$category['display_name']]) && count($components[$category['display_name']]) > 0) {
+                    usort($components[$category['display_name']], function($a, $b) {
+                        return strcmp($a['name'], $b['name']);
+                    });
+                }
             }
         }
     }
