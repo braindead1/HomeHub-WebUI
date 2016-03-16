@@ -1,7 +1,7 @@
 <?php
 
 // Load all custom files
-foreach (glob(__DIR__.'/custom/*') as $file) {
+foreach (glob(__DIR__.'/custom/*.php') as $file) {
     require_once($file);
 }
 
