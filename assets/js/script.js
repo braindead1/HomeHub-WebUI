@@ -178,28 +178,28 @@ var updateDatapoints = function () {
                     case 'CUX9002':
                         switch (datapoint) {
                             case 'ABS_HUMIDITY':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '%');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' %');
                                 break;
                             case 'DEW_POINT':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             case 'HUM_MAX_24H':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '%');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' %');
                                 break;
                             case 'HUM_MIN_24H':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '%');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' %');
                                 break;
                             case 'HUMIDITY':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '%');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' %');
                                 break;
                             case 'TEMP_MAX_24H':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             case 'TEMP_MIN_24H':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             case 'TEMPERATURE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             default:
                                 $('#' + ise_id).html(value);
@@ -208,10 +208,10 @@ var updateDatapoints = function () {
                     case 'HM-CC-RT-DN':
                         switch (datapoint) {
                             case 'ACTUAL_TEMPERATURE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             case 'BATTERY_STATE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'V');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' V');
                                 break;
                             case 'CONTROL_MODE':
                                 switch (value) {
@@ -238,10 +238,10 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'SET_TEMPERATURE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             case 'VALVE_STATE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '%');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' %');
                                 break;
                             default:
                                 $('#' + ise_id).html(value);
@@ -276,7 +276,7 @@ var updateDatapoints = function () {
                     case 'HM-CC-TC':
                         switch (datapoint) {
                             case 'HUMIDITY':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '%');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' %');
                                 break;
                             case 'LOWBAT':
                                 if (value === 'true') {
@@ -284,10 +284,10 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'SETPOINT':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             case 'TEMPERATURE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             default:
                                 $('#' + ise_id).html(value);
@@ -301,7 +301,7 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'VALVE_STATE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '%');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' %');
                                 break;
                             default:
                                 $('#' + ise_id).html(value);
@@ -349,22 +349,22 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'CURRENT':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'mA');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' mA');
                                 break;
                             case 'ENERGY_COUNTER':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'Wh');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' Wh');
                                 break;
                             case 'FREQUENCY':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'Hz');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' Hz');
                                 break;
                             case 'STATE':
                                 $('#' + ise_id).html(value);
                                 break;
                             case 'POWER':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'W');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' W');
                                 break;
                             case 'VOLTAGE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'V');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' V');
                                 break;
                             default:
                                 $('#' + ise_id).html(value);
@@ -388,22 +388,22 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'CURRENT':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'mA');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' mA');
                                 break;
                             case 'ENERGY_COUNTER':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'Wh');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' Wh');
                                 break;
                             case 'FREQUENCY':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'Hz');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' Hz');
                                 break;
                             case 'STATE':
                                 $('#' + ise_id).html(value);
                                 break;
                             case 'POWER':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'W');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' W');
                                 break;
                             case 'VOLTAGE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'V');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' V');
                                 break;
                             default:
                                 $('#' + ise_id).html(value);
@@ -422,14 +422,14 @@ var updateDatapoints = function () {
                                 value = Math.round(value * 10) / 10;
 
                                 if (value > 0) {
-                                    $('#' + ise_id).html((Math.round(value * 10) / 10) + 'm³');
+                                    $('#' + ise_id).html((Math.round(value * 10) / 10) + ' m³');
                                 }
                                 break;
                             case 'GAS_POWER':
                                 value = Math.round(value * 10) / 10;
 
                                 if (value > 0) {
-                                    $('#' + ise_id).html((Math.round(value * 10) / 10) + 'm³');
+                                    $('#' + ise_id).html((Math.round(value * 10) / 10) + ' m³');
                                 }
                                 break;
                             case 'LOWBAT':
@@ -441,7 +441,7 @@ var updateDatapoints = function () {
                                 value = Math.round(value * 10) / 10;
 
                                 if (value > 0) {
-                                    $('#' + ise_id).html((Math.round(value * 10) / 10) + 'W');
+                                    $('#' + ise_id).html((Math.round(value * 10) / 10) + ' W');
                                 }
                                 break;
                             default:
@@ -478,7 +478,7 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             default:
-                                $('#' + ise_id).html(value + '%');
+                                $('#' + ise_id).html(value + ' %');
                         }
                         break;
                     case 'HM-LC-Bl1-SM':
@@ -511,7 +511,7 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             default:
-                                $('#' + ise_id).html(value + '%');
+                                $('#' + ise_id).html(value + ' %');
                         }
                         break;
                     case 'HM-LC-Bl1PBU-FM':
@@ -1597,7 +1597,7 @@ var updateDatapoints = function () {
                                 if (value === '-0.005000') {
                                     $('#' + ise_id).html('<img src="../assets/icons/secur_locked.png" />');
                                 } else {
-                                    $('#' + ise_id).html((Math.round(value * 1000) / 10) + '%');
+                                    $('#' + ise_id).html((Math.round(value * 1000) / 10) + ' %');
                                 }
                                 break;
                             case 'STATE_UNCERTAIN':
@@ -1727,7 +1727,7 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'FILLING_LEVEL':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '%');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' %');
                                 break;
                             default:
                                 $('#' + ise_id).html(value);
@@ -1739,13 +1739,13 @@ var updateDatapoints = function () {
                     case 'HM-TC-IT-WM-W-EU':
                         switch (datapoint) {
                             case 'ACTUAL_HUMIDITY':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '%');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' %');
                                 break;
                             case 'ACTUAL_TEMPERATURE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             case 'BATTERY_STATE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'V');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' V');
                                 break;
                             case 'CONTROL_MODE':
                                 if (value === '0') {
@@ -1759,7 +1759,7 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'SET_TEMPERATURE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             case 'WINDOW_OPEN_REPORTING':
                                 if (value === 'false') {
@@ -1775,10 +1775,10 @@ var updateDatapoints = function () {
                     case 'HM-WDC7000':
                         switch (datapoint) {
                             case 'AIR_PRESSURE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'hPa');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' hPa');
                                 break;
                             case 'HUMIDITY':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '%');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' %');
                                 break;
                             case 'LOWBAT':
                                 if (value === 'true') {
@@ -1786,7 +1786,7 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'TEMPERATURE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             default:
                                 $('#' + ise_id).html(value);
@@ -1795,7 +1795,7 @@ var updateDatapoints = function () {
                     case 'HM-WDS10-TH-O':
                         switch (datapoint) {
                             case 'HUMIDITY':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '%');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' %');
                                 break;
                             case 'LOWBAT':
                                 if (value === 'true') {
@@ -1803,7 +1803,7 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'TEMPERATURE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             default:
                                 $('#' + ise_id).html(value);
@@ -1815,7 +1815,7 @@ var updateDatapoints = function () {
                                 $('#' + ise_id).html(value);
                                 break;
                             case 'HUMIDITY':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '%');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' %');
                                 break;
                             case 'LOWBAT':
                                 if (value === 'true') {
@@ -1823,7 +1823,7 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'RAIN_COUNTER':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'mm');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' mm');
                                 break;
                             case 'RAINING':
                                 if (value === 'true') {
@@ -1833,10 +1833,10 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'SUNSHINEDURATION':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'Min.');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' Min.');
                                 break;
                             case 'TEMPERATURE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             case 'WIND_DIRECTION':
                                 $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;');
@@ -1845,7 +1845,7 @@ var updateDatapoints = function () {
                                 $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;');
                                 break;
                             case 'WIND_SPEED':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'km/h');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' km/h');
                                 break;
                             default:
                                 $('#' + ise_id).html(value);
@@ -1859,7 +1859,7 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'TEMPERATURE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             default:
                                 $('#' + ise_id).html(value);
@@ -1873,7 +1873,7 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'TEMPERATURE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             default:
                                 $('#' + ise_id).html(value);
@@ -1882,7 +1882,7 @@ var updateDatapoints = function () {
                     case 'HM-WDS40-TH-I-2':
                         switch (datapoint) {
                             case 'HUMIDITY':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '%');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' %');
                                 break;
                             case 'LOWBAT':
                                 if (value === 'true') {
@@ -1890,7 +1890,7 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'TEMPERATURE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             default:
                                 $('#' + ise_id).html(value);
@@ -1899,7 +1899,7 @@ var updateDatapoints = function () {
                     case 'HM-WDS40-TH-I':
                         switch (datapoint) {
                             case 'HUMIDITY':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '%');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' %');
                                 break;
                             case 'LOWBAT':
                                 if (value === 'true') {
@@ -1907,7 +1907,7 @@ var updateDatapoints = function () {
                                 }
                                 break;
                             case 'TEMPERATURE':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + '&deg;C');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
                             default:
                                 $('#' + ise_id).html(value);
@@ -1937,7 +1937,7 @@ var updateDatapoints = function () {
                     case 'HMW-IO-12-Sw14-DR':
                         switch (datapoint) {
                             case 'FREQUENCY':
-                                $('#' + ise_id).html((Math.round(value * 10) / 10) + 'mHz');
+                                $('#' + ise_id).html((Math.round(value * 10) / 10) + ' mHz');
                                 break;
                             case 'STATE':
                                 if (value === 'true') {
