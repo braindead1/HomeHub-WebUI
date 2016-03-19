@@ -250,6 +250,19 @@
         "icon": "it_internet.png",
         "url": "http://homematic-forum.de/forum/"
       }
+    ],
+    "Heizung": [
+      {
+        "name": "Wohnzimmer Heizung:4",
+        "icon": "sani_heating.png",
+        "display_name": "Heizung Wohnzimmer"
+      },
+      {
+        "name": "Schlafzimmer Heizung:4",
+        "icon": "sani_heating.png",
+        "display_name": "Heizung Schlafzimmer",
+        "append_divider": "true"
+      }
     ]
   }
 }
