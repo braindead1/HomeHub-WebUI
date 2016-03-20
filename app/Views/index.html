@@ -47,12 +47,12 @@
             </nav>
             <div id="content" class="panel-group">                
                 <?php
-                    if(isset($flash['info'])) {
-                        echo '<pre>'.$flash['info'].'</pre>';
+                    if(isset($flash['error'])) {
+                        echo '<div id="flash-error" style="display: block;">'.$flash['error'].'</div>';
+                    } else {
+                        echo '<div id="flash-error"></div>';
                     }
                 ?>
-
-                <div id="flash-error"></div>
                 
                 <?php
                     $lastCategory = $selectedCat;
