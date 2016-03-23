@@ -169,7 +169,13 @@ $app->get('/Import', function () use ($app) {
         $export['programs'][] = $dummy;
     }
     
-    file_put_contents($exportFile, json_encode($export, JSON_UNESCAPED_UNICODE));
+    // Umlaute ersetzen
+    $json = str_replace(
+        array('\u00c4', '\u00e4', '\u00d6', '\u00f6', '\u00dc', '\u00fc', '\u00df'),
+        array('Ä', 'ä', 'Ö', 'ö', 'Ü', 'ü', 'ß'),
+        json_encode($export)
+    );
+    file_put_contents($exportFile, $json);
     
     $app->redirect($app->request()->getRootUri());
 });
