@@ -12,28 +12,28 @@ function CUX9002($component) {
         $datapoints = array();
         
         if(isset($component['TEMPERATURE'])) {
-            $datapoints[] = '<span class="info" id="' . $component['TEMPERATURE'] . '" data-component="' . $component['component'] . '" data-datapoint="TEMPERATURE"></span>';
+            $datapoints[] = '<span class="info" data-id="' . $component['TEMPERATURE'] . '" data-component="' . $component['component'] . '" data-datapoint="TEMPERATURE"></span>';
         }
         if(isset($component['HUMIDITY'])) {
-            $datapoints[] = '<span class="info" id="' . $component['HUMIDITY'] . '" data-component="' . $component['component'] . '" data-datapoint="HUMIDITY"></span>';
+            $datapoints[] = '<span class="info" data-id="' . $component['HUMIDITY'] . '" data-component="' . $component['component'] . '" data-datapoint="HUMIDITY"></span>';
         }
         if(isset($component['DEW_POINT'])) {
-            $datapoints[] = '<span class="info" id="' . $component['DEW_POINT'] . '" data-component="' . $component['component'] . '" data-datapoint="DEW_POINT"></span>';
+            $datapoints[] = '<span class="info" data-id="' . $component['DEW_POINT'] . '" data-component="' . $component['component'] . '" data-datapoint="DEW_POINT"></span>';
         }
         if(isset($component['ABS_HUMIDITY'])) {
-            $datapoints[] = '<span class="info" id="' . $component['ABS_HUMIDITY'] . '" data-component="' . $component['component'] . '" data-datapoint="ABS_HUMIDITY"></span>';
+            $datapoints[] = '<span class="info" data-id="' . $component['ABS_HUMIDITY'] . '" data-component="' . $component['component'] . '" data-datapoint="ABS_HUMIDITY"></span>';
         }
         if(isset($component['TEMP_MIN_24H'])) {
-            $datapoints[] = '<span class="info" id="' . $component['TEMP_MIN_24H'] . '" data-component="' . $component['component'] . '" data-datapoint="TEMP_MIN_24H"></span>';
+            $datapoints[] = '<span class="info" data-id="' . $component['TEMP_MIN_24H'] . '" data-component="' . $component['component'] . '" data-datapoint="TEMP_MIN_24H"></span>';
         }
         if(isset($component['TEMP_MAX_24H'])) {
-            $datapoints[] = '<span class="info" id="' . $component['TEMP_MAX_24H'] . '" data-component="' . $component['component'] . '" data-datapoint="TEMP_MAX_24H"></span>';
+            $datapoints[] = '<span class="info" data-id="' . $component['TEMP_MAX_24H'] . '" data-component="' . $component['component'] . '" data-datapoint="TEMP_MAX_24H"></span>';
         }
         if(isset($component['HUM_MIN_24H'])) {
-            $datapoints[] = '<span class="info" id="' . $component['HUM_MIN_24H'] . '" data-component="' . $component['component'] . '" data-datapoint="HUM_MIN_24H"></span>';
+            $datapoints[] = '<span class="info" data-id="' . $component['HUM_MIN_24H'] . '" data-component="' . $component['component'] . '" data-datapoint="HUM_MIN_24H"></span>';
         }
         if(isset($component['HUM_MAX_24H'])) {
-            $datapoints[] = '<span class="info" id="' . $component['HUM_MAX_24H'] . '" data-component="' . $component['component'] . '" data-datapoint="HUM_MAX_24H"></span>';
+            $datapoints[] = '<span class="info" data-id="' . $component['HUM_MAX_24H'] . '" data-component="' . $component['component'] . '" data-datapoint="HUM_MAX_24H"></span>';
         }
         
         return '<div class="hh">'

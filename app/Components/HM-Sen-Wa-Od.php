@@ -10,8 +10,8 @@ function HM_Sen_Wa_Od($component) {
         return '<div class="hh">'
             . '<div class="pull-left"><img src="../assets/icons/' . $component["icon"] . '" class="icon">' . $component['name'] . '</div>'
             . '<div class="pull-right">'
-                . '<span class="info" id="' . ($component['FILLING_LEVEL']-19) . '" data-component="' . $component['component'] . '" data-datapoint="LOWBAT"></span>'
-                . '<span class="info" id="' . $component['FILLING_LEVEL'] . '" data-component="' . $component['component'] . '" data-datapoint="FILLING_LEVEL"></span>'
+                . '<span class="info" data-id="' . ($component['FILLING_LEVEL']-19) . '" data-component="' . $component['component'] . '" data-datapoint="LOWBAT"></span>'
+                . '<span class="info" data-id="' . $component['FILLING_LEVEL'] . '" data-component="' . $component['component'] . '" data-datapoint="FILLING_LEVEL"></span>'
             . '</div>'
             . '<div class="clearfix"></div>'
         . '</div>';

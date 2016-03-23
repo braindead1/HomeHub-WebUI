@@ -10,9 +10,9 @@ function HM_WDS40_TH_I($component) {
         return '<div class="hh">'
             . '<div class="pull-left"><img src="../assets/icons/' . $component["icon"] . '" class="icon">' . $component['name'] . '</div>'
             . '<div class="pull-right">'
-                . '<span class="info" id="' . ($component['HUMIDITY']-15) . '" data-component="' . $component['component'] . '" data-datapoint="LOWBAT"></span>'
-                . '<span class="info" id="' . $component['TEMPERATURE'] . '" data-component="' . $component['component'] . '" data-datapoint="TEMPERATURE"></span>'
-                . '<span class="info" id="' . $component['HUMIDITY'] . '" data-component="' . $component['component'] . '" data-datapoint="HUMIDITY"></span>'
+                . '<span class="info" data-id="' . ($component['HUMIDITY']-15) . '" data-component="' . $component['component'] . '" data-datapoint="LOWBAT"></span>'
+                . '<span class="info" data-id="' . $component['TEMPERATURE'] . '" data-component="' . $component['component'] . '" data-datapoint="TEMPERATURE"></span>'
+                . '<span class="info" data-id="' . $component['HUMIDITY'] . '" data-component="' . $component['component'] . '" data-datapoint="HUMIDITY"></span>'
             . '</div>'
             . '<div class="clearfix"></div>'
         . '</div>';

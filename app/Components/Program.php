@@ -9,7 +9,7 @@ function Program($component) {
         return '<div class="hh">'
             . '<div class="pull-left"><img src="../assets/icons/' . $component["icon"] . '" class="icon">' . $component['name'] . '</div>'
             . '<div class="pull-right">'
-                . '<span class="run btn-text" id="' . $component['ise_id'] . '" data-run-id="' . $component['ise_id'] . '">Start</span>'
+                . '<span class="run btn-text" data-id="' . $component['ise_id'] . '" data-run-id="' . $component['ise_id'] . '">Start</span>'
             . '</div>'
             . '<div class="clearfix"></div>'
         . '</div>';

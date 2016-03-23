@@ -8,7 +8,7 @@ function HM_Sen_DB_PCB($component) {
         return '<div class="hh">'
             . '<div class="pull-left"><img src="../assets/icons/' . $component["icon"] . '" class="icon">' . $component['name'] . '</div>'
             . '<div class="pull-right">'
-                . '<span class="info" id="' . ($component['PRESS_SHORT']-21) . '" data-component="' . $component['component'] . '" data-datapoint="LOWBAT"></span>'
+                . '<span class="info" data-id="' . ($component['PRESS_SHORT']-21) . '" data-component="' . $component['component'] . '" data-datapoint="LOWBAT"></span>'
                 . '<span class="set btn-text" data-set-id="' . $component['PRESS_SHORT'] . '" data-set-value="1">Kurz</span>'
             . '</div>'
             . '<div class="clearfix"></div>'

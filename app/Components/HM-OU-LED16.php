@@ -27,7 +27,7 @@ function HM_OU_LED16($component) {
         return '<div class="hh">'
             . '<div class="pull-left"><img src="../assets/icons/' . $component["icon"] . '" class="icon">' . $component['name'] . '</div>'
             . '<div class="pull-right">'
-                . '<span class="info" id="' . $component['LED_STATUS'] . '" data-component="' . $component['component'] . '" data-datapoint="LED_STATUS"></span>'
+                . '<span class="info" data-id="' . $component['LED_STATUS'] . '" data-component="' . $component['component'] . '" data-datapoint="LED_STATUS"></span>'
                 . '<span class="set btn-text" data-set-id="' . $component['PRESS_SHORT'] . '" data-set-value="1">Kurz</span>'
             . '</div>'
             . '<div class="clearfix"></div>'

@@ -10,8 +10,8 @@ function HM_CC_VD($component) {
         return '<div class="hh">'
             . '<div class="pull-left"><img src="../assets/icons/' . $component["icon"] . '" class="icon">' . $component['name'] . '</div>'
             . '<div class="pull-right">'
-                . '<span class="info" id="' . ($component['VALVE_STATE']-28) . '" data-component="' . $component['component'] . '" data-datapoint="LOWBAT"></span>'
-                . '<span class="info" id="' . $component['VALVE_STATE'] . '" data-component="' . $component['component'] . '" data-datapoint="VALVE_STATE"></span>'
+                . '<span class="info" data-id="' . ($component['VALVE_STATE']-28) . '" data-component="' . $component['component'] . '" data-datapoint="LOWBAT"></span>'
+                . '<span class="info" data-id="' . $component['VALVE_STATE'] . '" data-component="' . $component['component'] . '" data-datapoint="VALVE_STATE"></span>'
             . '</div>'
             . '<div class="clearfix"></div>'
         . '</div>';
