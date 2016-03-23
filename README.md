@@ -81,7 +81,7 @@ HomeHub benötigt eine installierte CML-API auf der CCU.
 * HM-Sec-MDIR
 * HM-Sec-RHS
 * HM-Sec-SC-2
-* HM-Sec-SC (validieren)
+* HM-Sec-SC
 * HM-Sec-SCo
 * HM-Sec-SD-Team
 * HM-Sec-SFA-SM
