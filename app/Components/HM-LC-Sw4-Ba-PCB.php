@@ -6,6 +6,8 @@
 // HM-LC-Sw4-Ba-PCB|Lautsprecher 3|3|VISIBLE=true|OPERATE=true|STATE=22386|
 // HM-LC-Sw4-Ba-PCB|Lautsprecher 4|4|VISIBLE=true|OPERATE=true|STATE=22392|
 
+// LOWBAT wird nicht angezeigt
+
 // Validated by Manu
 
 function HM_LC_Sw4_Ba_PCB($component) {
@@ -13,7 +15,6 @@ function HM_LC_Sw4_Ba_PCB($component) {
         return '<div class="hh">'
             . '<div class="pull-left"><img src="../assets/icons/' . $component["icon"] . '" class="icon">' . $component['name'] . '</div>'
             . '<div class="pull-right">'
-                . '<span class="info" data-id="' . ($component['STATE']-22) . '" data-component="' . $component['component'] . '" data-datapoint="LOWBAT"></span>'
                 . '<span class="info set" data-id="' . $component['STATE'] . '" data-component="' . $component['component'] . '" data-datapoint="STATE" data-set-id="' . $component['STATE'] . '" data-set-value=""></span>'
             . '</div>'
             . '<div class="clearfix"></div>'
