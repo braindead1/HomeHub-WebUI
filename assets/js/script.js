@@ -307,6 +307,42 @@ var updateDatapoints = function () {
                                 $('[data-id="' + ise_id + '"]').html(value);
                         }
                         break;
+                    case 'HM-CC-VG-1':
+                        switch (datapoint) {
+                            case 'ACTUAL_TEMPERATURE':
+                                $('[data-id="' + ise_id + '"]').html((Math.round(value * 10) / 10) + ' &deg;C');
+                                break;
+                            case 'CONTROL_MODE':
+                                switch (value) {
+                                    case '0':
+                                        // AUTO_MODE
+                                        $('[data-id="' + ise_id + '"]').html('<img src="../assets/icons/time_automatic.png" />');
+                                        break;
+                                    case '1':
+                                        // MANU_MODE
+                                        $('[data-id="' + ise_id + '"]').html('<img src="../assets/icons/time_manual_mode.png" />');
+                                        break;
+                                    case '2':
+                                        // PARTY_MODE
+                                        $('[data-id="' + ise_id + '"]').html('<img src="../assets/icons/scene_party.png" />');
+                                        break;
+                                    default:
+                                        // BOOST_MODE
+                                        $('[data-id="' + ise_id + '"]').html('<img src="../assets/icons/text_max.png" />');
+                                }
+                                break;
+                            case 'LOWBAT':
+                                if (value === 'true') {
+                                    $('[data-id="' + ise_id + '"]').html('<img src="../assets/icons/measure_battery_25.png" />');
+                                }
+                                break;
+                            case 'SET_TEMPERATURE':
+                                $('[data-id="' + ise_id + '"]').html((Math.round(value * 10) / 10) + ' &deg;C');
+                                break;
+                            default:
+                                $('[data-id="' + ise_id + '"]').html(value);
+                        }
+                        break;
                     case 'HM-Dis-TD-T':
                         switch (datapoint) {
                             case 'STATE':
