@@ -339,6 +339,13 @@ var updateDatapoints = function () {
                             case 'SET_TEMPERATURE':
                                 $('[data-id="' + ise_id + '"]').html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
+                            case 'STATE':
+                                if (value === '0') {
+                                    $('[data-id="' + ise_id + '"]').html('<img src="../assets/icons/fts_window_1w.png" />');
+                                } else {
+                                    $('[data-id="' + ise_id + '"]').html('<img src="../assets/icons/fts_window_1w_open.png" />');
+                                }
+                                break;
                             default:
                                 $('[data-id="' + ise_id + '"]').html(value);
                         }
