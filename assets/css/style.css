@@ -10,12 +10,21 @@ body {
 
 header {
     background-color: #0e2f44;
-    padding: 15px 50px;
+    padding: 15px;
     text-align: center;
     position: fixed;
     width: 100%;
     top: 0px;
     box-shadow: 0 0px 10px 5px black;
+}
+
+header span {
+    display: inline-block;
+    width: 33%;
+}
+
+header #time {
+    text-align: right;
 }
 
 a:hover {
