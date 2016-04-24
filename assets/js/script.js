@@ -25,7 +25,7 @@ var updateDatapoints = function () {
 
     // Uhrzeit setzen
     date = new Date();
-    $('#time').html(date.toLocaleTimeString('de-DE').slice(0, -3) + ' Uhr');
+    $('#time').html(('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2) + ' Uhr');
 
     var id = '';
 
