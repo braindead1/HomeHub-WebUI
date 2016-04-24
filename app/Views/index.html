@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=1200">
 
-        <title>HomeHub WebUI</title>
+        <title><?php echo $title; ?></title>
         <base href="<?php echo $appBase.'/'; ?>">
         <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
@@ -29,7 +29,7 @@
     <body>
         <header>
             <span></span>
-            <span>HomeHub WebUI</span>
+            <span><?php echo $title; ?></span>
             <span id="time"></span>
         </header>
         <div class="container" id="wrapper">

@@ -3,6 +3,7 @@
 $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
     global $homematicIp;
     global $timerPeriod;
+    global $title;
 
     $appBase = $app->request()->getRootUri();
     if(substr($appBase, -9) <> 'index.php') {
@@ -166,6 +167,7 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
     
     $app->view()->set('homematicIp', $homematicIp);
     $app->view()->set('timerPeriod', $timerPeriod);
+    $app->view()->set('title', $title);
     $app->view()->set('appBase', $appBase);
     $app->view()->set('customCss', $customCss);
     $app->view()->set('customJs', $customJs);
