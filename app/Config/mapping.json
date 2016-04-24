@@ -58,6 +58,10 @@
         "icon": "control_switch_m_4.png"
       },
       {
+        "name": "HM-LC-Sw1-Pl-DN-R5",
+        "icon": "control_switch_m_4.png"
+      },
+      {
         "name": "HM-LC-Sw1-Pl",
         "icon": "light_light_dim_100.png"
       },

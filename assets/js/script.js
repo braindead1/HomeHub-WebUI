@@ -23,6 +23,10 @@ $(document).ready(function () {
 var updateDatapoints = function () {
     //192.168.2.6/config/xmlapi/state.cgi?datapoint_id=
 
+    // Uhrzeit setzen
+    date = new Date();
+    $('#time').html(date.toLocaleTimeString('de-DE').slice(0, -3) + ' Uhr');
+
     var id = '';
 
     $('.info').each(function () {
@@ -927,6 +931,32 @@ var updateDatapoints = function () {
                         }
                         break;
                     case 'HM-LC-Sw1-Pl-DN-R1':
+                        switch (datapoint) {
+                            case 'LOWBAT':
+                                if (value === 'true') {
+                                    $('[data-id="' + ise_id + '"]').html('<img src="../assets/icons/measure_battery_25.png" />');
+                                }
+                                break;
+                            case 'STATE':
+                                if (value === 'true') {
+                                    $('[data-id="' + ise_id + '"]').html('Ein');
+                                    $('[data-id="' + ise_id + '"]').addClass('btn-true');
+                                    $('[data-id="' + ise_id + '"]').removeClass('btn-false');
+                                    $('[data-id="' + ise_id + '"]').attr('data-set-id', ise_id);
+                                    $('[data-id="' + ise_id + '"]').attr('data-set-value', '0');
+                                } else {
+                                    $('[data-id="' + ise_id + '"]').html('Aus');
+                                    $('[data-id="' + ise_id + '"]').addClass('btn-false');
+                                    $('[data-id="' + ise_id + '"]').removeClass('btn-true');
+                                    $('[data-id="' + ise_id + '"]').attr('data-set-id', ise_id);
+                                    $('[data-id="' + ise_id + '"]').attr('data-set-value', '1');
+                                }
+                                break;
+                            default:
+                                $('[data-id="' + ise_id + '"]').html(value);
+                        }
+                        break;
+                    case 'HM-LC-Sw1-Pl-DN-R5':
                         switch (datapoint) {
                             case 'LOWBAT':
                                 if (value === 'true') {
