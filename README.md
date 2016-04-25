@@ -21,10 +21,10 @@ HomeHub benötigt eine installierte CML-API auf der CCU.
 * HM-CC-SCD
 * HM-CC-TC (validieren)
 * HM-CC-VD
-* HM-CC-VG-1 NEU (validieren)
+* HM-CC-VG-1 (validieren)
 * HM-Dis-TD-T (validieren)
 * HM-Dis-WM55
-* HM-ES-PMSw1-DR NEU
+* HM-ES-PMSw1-DR
 * HM-ES-PMSw1-Pl-DN-R5 (validieren)
 * HM-ES-PMSw1-Pl
 * HM-ES-TX-WM
@@ -126,10 +126,10 @@ HomeHub benötigt eine installierte CML-API auf der CCU.
 * CUX9002
 
 ## Unterstützte Custom Komponenten
-* Audio (Radio Erft) NEU
-* iFrame (HomeMatic-Forum) NEU
+* Audio (Radio Erft)
+* iFrame (HomeMatic-Forum)
 * Tagesschau in 100 Sekunden
-* Tankerkönig NEU
+* Tankerkönig
 * Webcam (INSTAR IN5905HD)
 
 ## Konfigurationsmöglichkeiten in HomeHub
