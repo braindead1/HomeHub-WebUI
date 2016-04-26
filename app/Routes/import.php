@@ -29,18 +29,13 @@ $app->get('/Import', function () use ($app) {
 
     $export = array();
     
+    // Devices und Channels von der CCU laden
     $devicelistCgi = file_get_contents('http://' . $homematicIp . '/config/xmlapi/devicelist.cgi?show_internal=1');
     $devicesXml = simplexml_load_string($devicelistCgi);
 
     $statelistCgi = file_get_contents('http://' . $homematicIp . '/config/xmlapi/statelist.cgi?show_internal=1');
     $statesXml = simplexml_load_string($statelistCgi);
-
-    $sysvarlistCgi = file_get_contents('http://' . $homematicIp . '/config/xmlapi/sysvarlist.cgi');
-    $sysvarsXml = simplexml_load_string($sysvarlistCgi);
-
-    $programlistCgi = file_get_contents('http://' . $homematicIp . '/config/xmlapi/programlist.cgi');
-    $programsXml = simplexml_load_string($programlistCgi);
-
+    
     // Devices
     foreach ($devicesXml->device as $device) {
         $dummy = array();
@@ -49,7 +44,7 @@ $app->get('/Import', function () use ($app) {
         }
         
         $statesXmlDevice = $statesXml->xpath('//device[@ise_id="' . strval($device['ise_id']) . '"]');
-        if($statesXmlDevice[0]) {
+        if(isset($statesXmlDevice[0])) {
             foreach($statesXmlDevice[0]->attributes() as $attribute => $value) {
                 $dummy[strval($attribute)] = strval($value);
             }
@@ -95,7 +90,7 @@ $app->get('/Import', function () use ($app) {
         }
         
         $channelStatesXml = $statesXml->xpath('//channel[@ise_id="' . strval($channel['ise_id']) . '"]');
-        if($channelStatesXml[0]) {
+        if(isset($channelStatesXml[0])) {
             foreach($channelStatesXml[0]->attributes() as $attribute => $value) {
                 $dummy[strval($attribute)] = strval($value);
             }
@@ -142,6 +137,16 @@ $app->get('/Import', function () use ($app) {
         }
     }
     
+    // Aufräumen
+    unset($devicelistCgi);
+    unset($devicesXml);
+    unset($statelistCgi);
+    unset($statesXml);
+    
+    // Systemvariablen von der CCU laden
+    $sysvarlistCgi = file_get_contents('http://' . $homematicIp . '/config/xmlapi/sysvarlist.cgi');
+    $sysvarsXml = simplexml_load_string($sysvarlistCgi);
+
     // Systemvariablen
     foreach ($sysvarsXml->systemVariable as $sysvar) {
         $dummy = array();
@@ -152,6 +157,14 @@ $app->get('/Import', function () use ($app) {
         }
         $export['systemvariables'][] = $dummy;
     }
+    
+    // Aufräumen
+    unset($sysvarlistCgi);
+    unset($sysvarsXml);
+    
+    // Programme von der CCU laden
+    $programlistCgi = file_get_contents('http://' . $homematicIp . '/config/xmlapi/programlist.cgi');
+    $programsXml = simplexml_load_string($programlistCgi);
     
     // Programme
     foreach ($programsXml->program as $program) {
@@ -168,6 +181,10 @@ $app->get('/Import', function () use ($app) {
         }
         $export['programs'][] = $dummy;
     }
+    
+    // Aufräumen
+    unset($programlistCgi);
+    unset($programsXml);
     
     // Umlaute ersetzen
     $json = str_replace(
