@@ -8,7 +8,7 @@
 
 function HM_Sec_Win($component) {
     if ($component['parent_device_interface'] == 'BidCos-RF' && $component['visible'] == 'true' && isset($component['RELOCK_DELAY'])) {
-        $modalId = uniqid();
+        $modalId = mt_rand();
         
         return '<div class="hh">'
             . '<div data-toggle="collapse" data-target="#' . $modalId . '">'

@@ -46,7 +46,7 @@ function HMW_IO_12_Sw14_DR($component) {
         }
         
         if (isset($component['FREQUENCY'])) {
-            $modalId = uniqid();
+            $modalId = mt_rand();
         
             return '<div class="hh">'
                 . '<div data-toggle="collapse" data-target="#' . $modalId . '">'

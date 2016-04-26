@@ -8,7 +8,7 @@
 
 function HM_CC_VG_1($component) {
     if ($component['parent_device_interface'] == 'VirtualDevices' && $component['visible'] == 'true' && isset($component['CONTROL_MODE'])) {
-        $modalId = uniqid();
+        $modalId = mt_rand();
         
         return '<div class="hh">'
             . '<div data-toggle="collapse" data-target="#' . $modalId . '">'

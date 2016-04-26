@@ -20,7 +20,7 @@ function HMW_LC_Bl1_DR($component) {
     }
     
     if ($component['parent_device_interface'] == 'BidCos-Wired' && $component['visible'] == 'true' && isset($component['LEVEL'])) {
-        $modalId = uniqid();
+        $modalId = mt_rand();
         
         return '<div class="hh">'
             . '<div data-toggle="collapse" data-target="#' . $modalId . '">'

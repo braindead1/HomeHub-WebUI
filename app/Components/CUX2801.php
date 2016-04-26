@@ -32,7 +32,7 @@ function CUX2801($component) {
     }
     
     if ($component['parent_device_interface'] == 'CUxD' && $component['visible'] == 'true' && isset($component['LEVEL']) && isset($component['STOP'])) {
-        $modalId = uniqid();
+        $modalId = mt_rand();
         
         return '<div class="hh">'
             . '<div data-toggle="collapse" data-target="#' . $modalId . '">'
@@ -70,7 +70,7 @@ function CUX2801($component) {
     }    
     
     if ($component['parent_device_interface'] == 'CUxD' && $component['visible'] == 'true' && isset($component['LEVEL']) && isset($component['OLD_LEVEL'])) {
-        $modalId = uniqid();
+        $modalId = mt_rand();
         
         return '<div class="hh">'
             . '<div data-toggle="collapse" data-target="#' . $modalId . '">'

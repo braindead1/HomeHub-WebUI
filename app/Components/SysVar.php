@@ -26,7 +26,7 @@ function SysVar($component) {
                 break;
             case '4':
                 // Number
-                $modalId = uniqid();
+                $modalId = mt_rand();
         
                 return '<div class="hh">'
                     . '<div data-toggle="collapse" data-target="#' . $modalId . '">'
@@ -53,7 +53,7 @@ function SysVar($component) {
                 break;
             case '16':
                 // Value List
-                $modalId = uniqid();
+                $modalId = mt_rand();
         
                 $valueList = '';
                 if($component['value_list'] <> '') {
@@ -86,7 +86,7 @@ function SysVar($component) {
                 . '</div>';
             case '20':
                 // Text
-                $modalId = uniqid();
+                $modalId = mt_rand();
         
                 return '<div class="hh">'
                     . '<div data-toggle="collapse" data-target="#' . $modalId . '">'

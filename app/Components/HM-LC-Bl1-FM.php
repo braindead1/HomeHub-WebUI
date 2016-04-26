@@ -4,7 +4,7 @@
 
 function HM_LC_BL1_FM($component) {
     if ($component['parent_device_interface'] == 'BidCos-RF' && $component['visible'] == 'true' && isset($component['LEVEL'])) {
-        $modalId = uniqid();
+        $modalId = mt_rand();
         
         return '<div class="hh">'
             . '<div data-toggle="collapse" data-target="#' . $modalId . '">'
