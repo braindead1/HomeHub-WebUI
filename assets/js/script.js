@@ -1332,6 +1332,9 @@ var updateDatapoints = function () {
                     case 'HM-PB-4-WM':
                         $('[data-id="' + ise_id + '"]').html(value);
                         break;
+                    case 'HM-PB-4Dis-WM-2':
+                        $('[data-id="' + ise_id + '"]').html(value);
+                        break;
                     case 'HM-PB-4Dis-WM':
                         $('[data-id="' + ise_id + '"]').html(value);
                         break;

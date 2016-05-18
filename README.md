@@ -2,7 +2,7 @@
 HomeHub ist ein alternatives Frontend für HomeMatic. Der Hauptfokus liegt darauf, eine Übersicht über die vorhandenen HomeMatic Komponenten zu geben und die Möglichkeit zu bieten, Komponenten wie Jalousien und Heizung schnell zu bedienen.
 
 ## Wie wird HomeHub installiert?
-HomeHub benötigt eine installierte CML-API auf der CCU.
+HomeHub benötigt eine installierte XML-API auf der CCU.
 
 1. HomeHub auf einen Webserver im LAN kopieren.
 2. In der Datei app/Config/config.php die korrekte IP der CCU in die Variable $homematicIp eintragen.
@@ -63,6 +63,7 @@ HomeHub benötigt eine installierte CML-API auf der CCU.
 * HM-PB-2-WM55-2
 * HM-PB-2-WM55
 * HM-PB-4-WM (validieren)
+* HM-PB-4Dis-WM-2
 * HM-PB-4Dis-WM
 * HM-PB-6-WM55
 * HM-PBI-4-FM
