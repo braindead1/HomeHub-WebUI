@@ -4,7 +4,7 @@
 // http://media.tagesschau.de/video/100s/2015/1212/TV-100s-1947.webxl.h264.mp4
 
 function Tagesschau($component) {
-    $modalId = uniqid();
+    $modalId = mt_rand();
         
     $rssFeed = file_get_contents('http://www.tagesschau.de/export/video-podcast/webxl/tagesschau-in-100-sekunden/');
     $xml = simplexml_load_string($rssFeed);

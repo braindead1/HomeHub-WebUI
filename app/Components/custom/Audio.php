@@ -3,7 +3,7 @@
 // http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-radioerft/livestream.mp3
 
 function Audio($component) {
-    $modalId = uniqid();
+    $modalId = mt_rand();
         
     return '<div class="hh">'
         . '<div data-toggle="collapse" data-target="#' . $modalId . '">'

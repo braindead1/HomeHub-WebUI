@@ -1,7 +1,7 @@
 <?php
 
 function Webcam($component) {
-    $modalId = uniqid();
+    $modalId = mt_rand();
         
     return '<div class="hh">'
         . '<div data-toggle="collapse" data-target="#' . $modalId . '">'
