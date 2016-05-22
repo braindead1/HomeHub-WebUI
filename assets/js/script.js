@@ -1587,6 +1587,19 @@ var updateDatapoints = function () {
                                 $('[data-id="' + ise_id + '"]').html(value);
                         }
                         break;
+                    case 'HM-Sec-SD-2-Team':
+                        switch (datapoint) {
+                            case 'STATE':
+                                if (value === 'false') {
+                                    $('[data-id="' + ise_id + '"]').html('<img src="../assets/icons/control_clear.png" />');
+                                } else {
+                                    $('[data-id="' + ise_id + '"]').html('<img src="../assets/icons/message_attention.png" />');
+                                }
+                                break;
+                            default:
+                                $('[data-id="' + ise_id + '"]').html(value);
+                        }
+                        break;
                     case 'HM-Sec-SD-Team':
                         switch (datapoint) {
                             case 'STATE':

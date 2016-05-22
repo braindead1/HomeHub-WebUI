@@ -244,8 +244,7 @@
       {
         "name": "HM-PB-4Dis-WM-2",
         "icon": "control_switch_m_4.png"
-      },
-      
+      },      
       {
         "name": "HM-PB-4Dis-WM",
         "icon": "control_switch_m_4.png"
@@ -351,6 +350,10 @@
       {
         "name": "HM-Sec-MDIR",
         "icon": "status_man.png"
+      },
+      {
+        "name": "HM-Sec-SD-2-Team",
+        "icon": "secur_smoke_detector.png"
       },
       {
         "name": "HM-Sec-SD-Team",

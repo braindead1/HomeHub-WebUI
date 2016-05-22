@@ -87,6 +87,7 @@ HomeHub benötigt eine installierte XML-API auf der CCU.
 * HM-Sec-SC-2
 * HM-Sec-SC
 * HM-Sec-SCo
+* HM-Sec-SD-2-Team
 * HM-Sec-SD-Team
 * HM-Sec-SFA-SM
 * HM-Sec-TiS (validieren)
