@@ -132,6 +132,7 @@ HomeHub benötigt eine installierte XML-API auf der CCU.
 * iFrame (HomeMatic-Forum)
 * Tagesschau in 100 Sekunden
 * Tankerkönig
+* WeatherUnderground
 * Webcam (INSTAR IN5905HD)
 
 ## Konfigurationsmöglichkeiten in HomeHub

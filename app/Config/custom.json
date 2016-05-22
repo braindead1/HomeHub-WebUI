@@ -170,7 +170,6 @@
       }
     ],
     "Einfahrt": [
-      
       {
         "component": "Webcam",
         "name": "Webcam",
@@ -228,6 +227,13 @@
       }
     ],
     "Custom": [
+      {
+        "component": "WeatherUnderground",
+        "name": "Wetter Dorsten",
+        "icon": "weather_sunrise.png",
+        "api_key": "xxxxxxxxxxxxxxxx",
+        "station": "Germany/Dorsten"
+      },
       {
         "component": "Tagesschau",
         "name": "Tagesschau",
