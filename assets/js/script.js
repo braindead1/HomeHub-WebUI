@@ -1362,6 +1362,9 @@ var updateDatapoints = function () {
                     case 'HM-RC-4':
                         $('[data-id="' + ise_id + '"]').html(value);
                         break;
+                    case 'HM-RC-8':
+                        $('[data-id="' + ise_id + '"]').html(value);
+                        break;
                     case 'HM-RC-Dis-H-x-EU':
                         $('[data-id="' + ise_id + '"]').html(value);
                         break;

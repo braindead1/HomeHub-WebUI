@@ -73,6 +73,7 @@ HomeHub benötigt eine installierte XML-API auf der CCU.
 * HM-RC-4-2
 * HM-RC-4-B
 * HM-RC-4
+* HM-RC-8
 * HM-RC-Dis-H-x-EU
 * HM-RC-Key3-B (validieren)
 * HM-RC-Key4-2
