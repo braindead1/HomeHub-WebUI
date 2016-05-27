@@ -6,7 +6,15 @@
 function Tagesschau($component) {
     $modalId = mt_rand();
         
-    $rssFeed = file_get_contents('http://www.tagesschau.de/export/video-podcast/webxl/tagesschau-in-100-sekunden/');
+    $cacheFile = 'cache/Tagesschau.tmp';
+    
+    if (file_exists($cacheFile) && (filemtime($cacheFile) > (time() - 60 * 5 ))) {
+        $rssFeed = file_get_contents($cacheFile);
+    } else {
+        $rssFeed = file_get_contents('http://www.tagesschau.de/export/video-podcast/webxl/tagesschau-in-100-sekunden/');
+        file_put_contents($cacheFile, $rssFeed, LOCK_EX);
+    }
+    
     $xml = simplexml_load_string($rssFeed);
     
     return '<div class="hh">'

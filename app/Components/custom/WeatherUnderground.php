@@ -1,7 +1,15 @@
 <?php
 
 function WeatherUnderground($component) {
-    $json = file_get_contents('http://api.wunderground.com/api/' . $component['api_key'] . '/conditions/forecast/lang:DL/q/' . $component['station'] . '.json');
+    $cacheFile = 'cache/WeatherUnderground.tmp';
+    
+    if (file_exists($cacheFile) && (filemtime($cacheFile) > (time() - 60 * 5 ))) {
+        $json = file_get_contents($cacheFile);
+    } else {
+        $json = file_get_contents('http://api.wunderground.com/api/' . $component['api_key'] . '/conditions/forecast/lang:DL/q/' . $component['station'] . '.json');
+        file_put_contents($cacheFile, $json, LOCK_EX);
+    }
+    
     $data = json_decode($json, true);
     
     $retVal = '';

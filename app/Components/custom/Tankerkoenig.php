@@ -7,7 +7,15 @@
 // https://creativecommons.tankerkoenig.de/json/detail.php?id=TANKSTELLEN_ID&apikey=APIKEY
 
 function Tankerkoenig($component) {
-    $json = file_get_contents('https://creativecommons.tankerkoenig.de/json/detail.php?id=' . $component['station_id'] . '&apikey=' . $component['api_key']);
+    $cacheFile = 'cache/Tankerkoenig.tmp';
+    
+    if (file_exists($cacheFile) && (filemtime($cacheFile) > (time() - 60 * 5 ))) {
+        $json = file_get_contents($cacheFile);
+    } else {
+        $json = file_get_contents('https://creativecommons.tankerkoenig.de/json/detail.php?id=' . $component['station_id'] . '&apikey=' . $component['api_key']);
+        file_put_contents($cacheFile, $json, LOCK_EX);
+    }   
+    
     $data = json_decode($json, true);
     
     $retVal = '';
