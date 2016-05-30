@@ -7,7 +7,7 @@
 // https://creativecommons.tankerkoenig.de/json/detail.php?id=TANKSTELLEN_ID&apikey=APIKEY
 
 function Tankerkoenig($component) {
-    $cacheFile = 'cache/Tankerkoenig.tmp';
+    $cacheFile = 'cache/Tankerkoenig.' . md5(serialize($component)) . '.tmp';
     
     if (file_exists($cacheFile) && (filemtime($cacheFile) > (time() - 60 * 5 ))) {
         $json = file_get_contents($cacheFile);

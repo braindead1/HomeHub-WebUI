@@ -1,7 +1,7 @@
 <?php
 
 function WeatherUnderground($component) {
-    $cacheFile = 'cache/WeatherUnderground.tmp';
+    $cacheFile = 'cache/WeatherUnderground.' . md5(serialize($component)) . '.tmp';
     
     if (file_exists($cacheFile) && (filemtime($cacheFile) > (time() - 60 * 5 ))) {
         $json = file_get_contents($cacheFile);

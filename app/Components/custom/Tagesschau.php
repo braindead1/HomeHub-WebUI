@@ -6,7 +6,7 @@
 function Tagesschau($component) {
     $modalId = mt_rand();
         
-    $cacheFile = 'cache/Tagesschau.tmp';
+    $cacheFile = 'cache/Tagesschau.' . md5(serialize($component)) . '.tmp';
     
     if (file_exists($cacheFile) && (filemtime($cacheFile) > (time() - 60 * 5 ))) {
         $rssFeed = file_get_contents($cacheFile);
