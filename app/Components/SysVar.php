@@ -14,11 +14,16 @@ function SysVar($component) {
                 if($component['value_name_0'] <> '' ||$component['value_name_1'] <> '') {
                     $valueList = $component['value_name_0'].';'.$component['value_name_1'];
                 }
+                
+                // Farben invertieren?
+                if(!isset($component['invert_color'])) {
+                    $component['invert_color'] = 'false';
+                }
 
                 return '<div class="hh">'
                     . '<div class="pull-left"><img src="../assets/icons/' . $component["icon"] . '" class="icon">' . $component['name'] . '</div>'
                     . '<div class="pull-right">'
-                        . '<span class="info set" data-id="' . $component['ise_id'] . '" data-component="' . $component['component'] . '" data-datapoint="2" data-unit="' . htmlentities($component['unit']) . '" data-set-id="' . $component['ise_id'] . '" data-set-value="" data-valuelist="'.$valueList.'"></span>'
+                        . '<span class="info set" data-id="' . $component['ise_id'] . '" data-component="' . $component['component'] . '" data-datapoint="2" data-unit="' . htmlentities($component['unit']) . '" data-set-id="' . $component['ise_id'] . '" data-set-value="" data-valuelist="'.$valueList.'" data-invert-color="' . $component['invert_color'] . '"></span>'
                     . '</div>'
                     . '<div class="clearfix"></div>'
                 . '</div>';
