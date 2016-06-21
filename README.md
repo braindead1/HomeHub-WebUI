@@ -118,6 +118,7 @@ HomeHub benötigt eine installierte XML-API auf der CCU.
 * HMW-IO-4-FM
 * HMW-LC-Bl1-DR
 * HMW-LC-Dim1L-DR
+* HMW-LC-Sw2-DR
 * HMW-Sen-SC-12-DR
 * Programme
 * Systemvariablen

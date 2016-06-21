@@ -2200,6 +2200,27 @@ var updateDatapoints = function () {
                                 $('[data-id="' + ise_id + '"]').html(value + '%');
                         }
                         break;
+                    case 'HMW-LC-Sw2-DR':
+                        switch (datapoint) {
+                            case 'STATE':
+                                if (value === 'true') {
+                                    $('[data-id="' + ise_id + '"]').html('Ein');
+                                    $('[data-id="' + ise_id + '"]').addClass('btn-true');
+                                    $('[data-id="' + ise_id + '"]').removeClass('btn-false');
+                                    $('[data-id="' + ise_id + '"]').attr('data-set-id', ise_id);
+                                    $('[data-id="' + ise_id + '"]').attr('data-set-value', '0');
+                                } else {
+                                    $('[data-id="' + ise_id + '"]').html('Aus');
+                                    $('[data-id="' + ise_id + '"]').addClass('btn-false');
+                                    $('[data-id="' + ise_id + '"]').removeClass('btn-true');
+                                    $('[data-id="' + ise_id + '"]').attr('data-set-id', ise_id);
+                                    $('[data-id="' + ise_id + '"]').attr('data-set-value', '1');
+                                }
+                                break;
+                            default:
+                                $('[data-id="' + ise_id + '"]').html(value);
+                        }
+                        break;
                     case 'HMW-Sen-SC-12-DR':
                         switch (datapoint) {
                             case 'SENSOR':
@@ -2217,18 +2238,32 @@ var updateDatapoints = function () {
                         switch (datapoint) {
                             case '2':
                                 // Yes/No
+                                var invert_color = $('[data-id="' + ise_id + '"]').attr('data-invert-color');
+                                
                                 if (value === 'true') {
-                                    $('[data-id="' + ise_id + '"]').html(valueList.split(';')[parseInt(1)]);
-                                    $('[data-id="' + ise_id + '"]').addClass('btn-true');
-                                    $('[data-id="' + ise_id + '"]').removeClass('btn-false');
+                                    $('[data-id="' + ise_id + '"]').html(valueList.split(';')[parseInt(1)]);                                    
                                     $('[data-id="' + ise_id + '"]').attr('data-set-id', ise_id);
                                     $('[data-id="' + ise_id + '"]').attr('data-set-value', '0');
+                                    
+                                    if (invert_color === 'false') {
+                                        $('[data-id="' + ise_id + '"]').addClass('btn-true');
+                                        $('[data-id="' + ise_id + '"]').removeClass('btn-false');
+                                    } else {
+                                        $('[data-id="' + ise_id + '"]').addClass('btn-false');
+                                        $('[data-id="' + ise_id + '"]').removeClass('btn-true');
+                                    }
                                 } else {
                                     $('[data-id="' + ise_id + '"]').html(valueList.split(';')[parseInt(0)]);
-                                    $('[data-id="' + ise_id + '"]').addClass('btn-false');
-                                    $('[data-id="' + ise_id + '"]').removeClass('btn-true');
                                     $('[data-id="' + ise_id + '"]').attr('data-set-id', ise_id);
                                     $('[data-id="' + ise_id + '"]').attr('data-set-value', '1');
+                                    
+                                    if (invert_color === 'false') {
+                                        $('[data-id="' + ise_id + '"]').addClass('btn-false');
+                                        $('[data-id="' + ise_id + '"]').removeClass('btn-true');
+                                    } else {
+                                        $('[data-id="' + ise_id + '"]').addClass('btn-true');
+                                        $('[data-id="' + ise_id + '"]').removeClass('btn-false');
+                                    }
                                 }
                                 break;
                             case '4':
