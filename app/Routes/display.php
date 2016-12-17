@@ -1,13 +1,15 @@
 <?php
 
-$app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
+$app->get('/[{selectedCat}]', function ($request,  $response, $arguments) {
     global $homematicIp;
     global $timerPeriod;
     global $title;
-
-    $appBase = $app->request()->getRootUri();
+    
+    $selectedCat = $request->getAttribute('selectedCat', 'Home');
+    
+    $appBase = $request->getUri()->getBaseUrl();
     if(substr($appBase, -9) <> 'index.php') {
-        $appBase = $app->request()->getRootUri().'/index.php';
+        $appBase = $request->getUri().'index.php';
     }
 
     $customCss = false;
@@ -165,19 +167,21 @@ $app->get('/(:selectedCat)', function ($selectedCat = 'Home') use ($app) {
         }
     }
     
-    $app->view()->set('homematicIp', $homematicIp);
-    $app->view()->set('timerPeriod', $timerPeriod);
-    $app->view()->set('title', $title);
-    $app->view()->set('appBase', $appBase);
-    $app->view()->set('customCss', $customCss);
-    $app->view()->set('customJs', $customJs);
-    $app->view()->set('selectedCat', $selectedCat);
-    $app->view()->set('menu', $menu);
-    $app->view()->set('components', $components);
-
+    $this->view->addAttribute('homematicIp', $homematicIp);
+    $this->view->addAttribute('timerPeriod', $timerPeriod);
+    $this->view->addAttribute('title', $title);
+    $this->view->addAttribute('appBase', $appBase);
+    $this->view->addAttribute('customCss', $customCss);
+    $this->view->addAttribute('customJs', $customJs);
+    $this->view->addAttribute('selectedCat', $selectedCat);
+    $this->view->addAttribute('menu', $menu);
+    $this->view->addAttribute('components', $components);
+    
     if(file_exists('app/Views/custom/'.strtolower($selectedCat).'.html')) {
-        $app->render('custom/'.strtolower($selectedCat).'.html');
+        $response = $this->view->render($response, 'custom/'.strtolower($selectedCat).'.html', []);
     } else {
-        $app->render('index.html');
+        $response = $this->view->render($response, 'index.html', []);
     }
+    
+    return $response;
 });

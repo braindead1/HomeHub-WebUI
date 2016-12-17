@@ -1,6 +1,6 @@
 <?php
 
-$app->get('/Import', function () use ($app) {
+$app->get('/Import', function ($request,  $response, $arguments) {
     global $homematicIp;
 
     // Delete Cache
@@ -194,5 +194,5 @@ $app->get('/Import', function () use ($app) {
     );
     file_put_contents($exportFile, $json);
     
-    $app->redirect($app->request()->getRootUri());
+    return $response->withStatus(302)->withHeader('Location', $request->getUri()->getBaseUrl());
 });
