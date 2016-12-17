@@ -42,6 +42,10 @@
                 "icon": "control_switch_m_4.png"
             },
             {
+                "name": "HM-LC-Sw1-DR",
+                "icon": "light_light_dim_100.png"
+            },
+            {
                 "name": "HM-LC-Sw1-FM",
                 "icon": "light_light_dim_100.png"
             },
@@ -320,6 +324,10 @@
             {
                 "name": "HM-SwI-3-FM",
                 "icon": "control_switch_m_4.png"
+            },
+            {
+                "name": "HMW-RCV-50",
+                "icon": "it_remote.png"
             }
         ],
         "Sicherheit": [

@@ -12,7 +12,7 @@ HomeHub benötigt eine installierte XML-API auf der CCU.
 
 ## Anforderungen
 * XML-API
-* PHP 5
+* PHP 5.5
 * libxml Erweiterung
 * JavaScript
 
@@ -38,6 +38,7 @@ HomeHub benötigt eine installierte XML-API auf der CCU.
 * HM-LC-Dim1TPBU-FM
 * HM-LC-RGBW-WM
 * HM-LC-Sw1-Ba-PCB
+* HM-LC-Sw1-DR (validieren)
 * HM-LC-Sw1-FM
 * HM-LC-Sw1-PB-FM
 * HM-LC-Sw1-Pl-2
@@ -119,6 +120,7 @@ HomeHub benötigt eine installierte XML-API auf der CCU.
 * HMW-LC-Bl1-DR
 * HMW-LC-Dim1L-DR
 * HMW-LC-Sw2-DR
+* HMW-RCV-50 (validieren)
 * HMW-Sen-SC-12-DR
 * Programme
 * Systemvariablen
