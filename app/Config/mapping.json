@@ -6,6 +6,10 @@
                 "icon": "message_socket_on_off.png"
             },
             {
+                "name": "HM-ES-PMSw1-Pl-DN-R1",
+                "icon": "message_socket_on_off.png"
+            },
+            {
                 "name": "HM-ES-PMSw1-Pl-DN-R5",
                 "icon": "message_socket_on_off.png"
             },
