@@ -438,6 +438,10 @@
                 "icon": "temp_temperature.png"
             },
             {
+                "name": "HM-WDS30-OT2-SM-2",
+                "icon": "temp_temperature.png"
+            },
+            {
                 "name": "HM-WDS30-T-O",
                 "icon": "temp_temperature.png"
             },

@@ -2061,6 +2061,20 @@ var updateDatapoints = function () {
                                 $('[data-id="' + ise_id + '"]').html(value);
                         }
                         break;
+                    case 'HM-WDS30-OT2-SM-2':
+                        switch (datapoint) {
+                            case 'LOWBAT':
+                                if (value === 'true') {
+                                    $('[data-id="' + ise_id + '"]').html('<img src="../assets/icons/measure_battery_25.png" />');
+                                }
+                                break;
+                            case 'TEMPERATURE':
+                                $('[data-id="' + ise_id + '"]').html((Math.round(value * 10) / 10) + ' &deg;C');
+                                break;
+                            default:
+                                $('[data-id="' + ise_id + '"]').html(value);
+                        }
+                        break;
                     case 'HM-WDS30-T-O':
                         switch (datapoint) {
                             case 'LOWBAT':

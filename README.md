@@ -111,6 +111,7 @@ HomeHub benötigt eine installierte XML-API auf der CCU.
 * HM-WDS10-TH-O
 * HM-WDS100-C6-O
 * HM-WDS30-OT2-SM
+* HM-WDS30-OT2-SM-2 (validieren)
 * HM-WDS30-T-O (validieren)
 * HM-WDS40-TH-I-2
 * HM-WDS40-TH-I
