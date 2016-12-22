@@ -25,7 +25,7 @@ HomeHub benötigt eine installierte XML-API auf der CCU.
 * HM-Dis-TD-T (validieren)
 * HM-Dis-WM55
 * HM-ES-PMSw1-DR
-* HM-ES-PMSw1-Pl-DN-R1 (validieren)
+* HM-ES-PMSw1-Pl-DN-R1
 * HM-ES-PMSw1-Pl-DN-R5 (validieren)
 * HM-ES-PMSw1-Pl
 * HM-ES-TX-WM
@@ -39,7 +39,7 @@ HomeHub benötigt eine installierte XML-API auf der CCU.
 * HM-LC-Dim1TPBU-FM
 * HM-LC-RGBW-WM
 * HM-LC-Sw1-Ba-PCB
-* HM-LC-Sw1-DR (validieren)
+* HM-LC-Sw1-DR
 * HM-LC-Sw1-FM
 * HM-LC-Sw1-PB-FM
 * HM-LC-Sw1-Pl-2
@@ -111,7 +111,7 @@ HomeHub benötigt eine installierte XML-API auf der CCU.
 * HM-WDS10-TH-O
 * HM-WDS100-C6-O
 * HM-WDS30-OT2-SM
-* HM-WDS30-OT2-SM-2 (validieren)
+* HM-WDS30-OT2-SM-2
 * HM-WDS30-T-O (validieren)
 * HM-WDS40-TH-I-2
 * HM-WDS40-TH-I
@@ -122,7 +122,7 @@ HomeHub benötigt eine installierte XML-API auf der CCU.
 * HMW-LC-Bl1-DR
 * HMW-LC-Dim1L-DR
 * HMW-LC-Sw2-DR
-* HMW-RCV-50 (validieren)
+* HMW-RCV-50
 * HMW-Sen-SC-12-DR
 * Programme
 * Systemvariablen
