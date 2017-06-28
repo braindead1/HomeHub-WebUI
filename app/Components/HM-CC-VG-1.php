@@ -17,6 +17,7 @@ function HM_CC_VG_1($component) {
                     . '<span class="info" data-id="' . ($component['ACTUAL_TEMPERATURE']-12) . '" data-component="' . $component['component'] . '" data-datapoint="LOWBAT"></span>'
                     . '<span class="info" data-id="' . ($component['ACTUAL_TEMPERATURE']+15) . '" data-component="' . $component['component'] . '" data-datapoint="STATE"></span>'
                     . '<span class="info" data-id="' . $component['ACTUAL_TEMPERATURE'] . '" data-component="' . $component['component'] . '" data-datapoint="ACTUAL_TEMPERATURE"></span>'
+                    . '<span class="info" data-id="' . $component['ACTUAL_HUMIDITY'] . '" data-component="' . $component['component'] . '" data-datapoint="ACTUAL_HUMIDITY"></span>'
                     . '<span class="info" data-id="' . $component['SET_TEMPERATURE'] . '" data-component="' . $component['component'] . '" data-datapoint="SET_TEMPERATURE"></span>'
                     . '<span class="info" data-id="' . $component['CONTROL_MODE'] . '" data-component="' . $component['component'] . '" data-datapoint="CONTROL_MODE"></span>'
                 . '</div>'

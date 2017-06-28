@@ -316,6 +316,9 @@ var updateDatapoints = function () {
                             case 'ACTUAL_TEMPERATURE':
                                 $('[data-id="' + ise_id + '"]').html((Math.round(value * 10) / 10) + ' &deg;C');
                                 break;
+                            case 'ACTUAL_HUMIDITY':
+                                $('[data-id="' + ise_id + '"]').html((Math.round(value * 10) / 10) + ' %');
+                                break;
                             case 'CONTROL_MODE':
                                 switch (value) {
                                     case '0':
